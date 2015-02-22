@@ -19,7 +19,7 @@ public abstract class Operation {
     }
 
     public Operands getOperands() {
-    
+
         return ops;
     }
 

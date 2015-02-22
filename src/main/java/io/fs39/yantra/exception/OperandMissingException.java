@@ -17,7 +17,7 @@ public class OperandMissingException extends ComputationException {
     }
 
     public OperandMissingException(String message) {
-        
+
         super(message);
     }
 
@@ -27,15 +27,13 @@ public class OperandMissingException extends ComputationException {
     }
 
     public OperandMissingException(Throwable cause) {
-        
+
         super(cause);
     }
 
     public OperandMissingException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-        
+
         super(message, cause, enableSuppression, writableStackTrace);
     }
-    
-    
 
 }

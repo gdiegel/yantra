@@ -41,7 +41,7 @@ public class Numbers {
     }
 
     private static void handleParseException(final String fromString, ParseException e) throws OperandMissingException {
-        
+
         String m = new StringBuilder("Couldn't parse string [").append(fromString).append("]: ")
                 .append(e.getMessage()).toString();
         LOG.warn(m);

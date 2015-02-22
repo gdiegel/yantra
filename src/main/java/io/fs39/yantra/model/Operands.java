@@ -20,16 +20,19 @@ public class Operands {
     private final List<Number> operands;
 
     public Operands(Number a, Number b) {
+        
         operands = Collections.synchronizedList(new ArrayList<Number>());
         operands.add(a);
         operands.add(b);
     }
 
     public Number getA() {
+        
         return operands.get(0);
     }
 
     public Number getB() {
+        
         return operands.get(1);
     }
 
@@ -42,6 +45,5 @@ public class Operands {
 
         return new Operands(a, b);
     }
-
 
 }

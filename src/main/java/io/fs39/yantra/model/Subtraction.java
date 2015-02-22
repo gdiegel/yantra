@@ -12,11 +12,11 @@ public final class Subtraction extends Operation implements Computable {
 
     private static final Logger LOG = LoggerFactory.getLogger(Subtraction.class);
 
-    public Subtraction(Operands ops){
-        
+    public Subtraction(Operands ops) {
+
         super(ops);
     }
-    
+
     @Override
     public ComputationResult compute() {
 

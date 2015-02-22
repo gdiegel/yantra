@@ -12,11 +12,11 @@ public final class Addition extends Operation implements Computable {
 
     private static final Logger LOG = LoggerFactory.getLogger(Addition.class);
 
-    public Addition(Operands ops){
-        
+    public Addition(Operands ops) {
+
         super(ops);
     }
-    
+
     @Override
     public ComputationResult compute() {
 
