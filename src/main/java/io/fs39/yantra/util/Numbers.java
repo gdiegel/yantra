@@ -20,23 +20,28 @@ public class Numbers {
     public static <T extends Number> T fromString(final String fromString, Class<T> type) throws OperandMissingException {
 
         Optional<T> toNumber = Optional.empty();
-        NumberFormat nf = NumberFormat.getInstance();
         if (type.equals(BigDecimal.class)) {
-            ((DecimalFormat) nf).setParseBigDecimal(true);
+            DecimalFormat df = (DecimalFormat) DecimalFormat.getInstance();
+            df.setParseBigDecimal(true);
             try {
-                toNumber = Optional.of((T) ((DecimalFormat) nf).parse(fromString));
+                toNumber = Optional.of((T) df.parse(fromString));
             } catch (ParseException e) {
                 handleParseException(fromString, e);
             }
+        } else if (type.equals(Double.class)) {
+            toNumber = Optional.of((T) Double.valueOf(fromString));
+        } else if (type.equals(Integer.class)) {
+            toNumber = Optional.of((T) Integer.valueOf(fromString));
         } else {
             try {
+                NumberFormat nf = NumberFormat.getInstance();
                 toNumber = Optional.of((T) nf.parse(fromString));
             } catch (ParseException e) {
                 handleParseException(fromString, e);
             }
         }
 
-        LOG.info("Parsed operand {fromString={}, toNumber={}}", fromString, toNumber);
+        LOG.info("Parsed operand {fromString={}, toNumber={}, class={}}", fromString, toNumber.get(), type.getCanonicalName());
         return toNumber.orElseThrow(OperandMissingException::new);
     }
 
