@@ -1,4 +1,4 @@
-package io.fs39.exception;
+package io.fs39.yantra.exception;
 
 import org.apache.log4j.Logger;
 

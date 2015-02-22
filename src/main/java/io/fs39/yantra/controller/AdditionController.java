@@ -1,8 +1,9 @@
-package io.fs39.controller;
+package io.fs39.yantra.controller;
 
-import io.fs39.exception.ComputationException;
-import io.fs39.model.Addition;
-import io.fs39.model.ComputationResult;
+import io.fs39.yantra.exception.ComputationException;
+import io.fs39.yantra.model.Addition;
+import io.fs39.yantra.model.ComputationResult;
+import io.fs39.yantra.model.Operands;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,7 +26,7 @@ public class AdditionController {
 
         ComputationResult result;
         try {
-            result = new Addition(augend, addend).compute();
+            result = new Addition(Operands.withOperands(augend, addend)).compute();
         } catch (ComputationException e) {
             LOG.warn(e.getMessage());
             return ComputationResult.invalid();

@@ -1,4 +1,4 @@
-package io.fs39;
+package io.fs39.yantra;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,6 +1,6 @@
-package io.fs39.model;
+package io.fs39.yantra.model;
 
-import io.fs39.exception.OperandMissingException;
+import io.fs39.yantra.exception.OperandMissingException;
 
 /**
  *
@@ -12,7 +12,7 @@ public interface Computable {
      * Computes the result of the operation with the given operators.
      *
      * @return the result of the compution
-     * @throws io.fs39.exception.OperandMissingException
+     * @throws io.fs39.yantra.exception.OperandMissingException
      */
     ComputationResult compute() throws OperandMissingException;
 
