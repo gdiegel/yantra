@@ -1,12 +1,11 @@
 package io.fs39.yantra.model;
 
 import io.fs39.yantra.exception.OperandMissingException;
-import java.text.NumberFormat;
-import java.text.ParseException;
+import io.fs39.yantra.util.Numbers;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -34,27 +33,15 @@ public class Operands {
         return operands.get(1);
     }
 
-    public static Operands withOperands(final String operand1, final String operand2) throws OperandMissingException {
+    public static Operands asBigDecimal(final String operand1, final String operand2) throws OperandMissingException {
 
-        Optional<Number> parsedOperand1 = parseString(operand1);
-        Optional<Number> parsedOperand2 = parseString(operand2);
+        BigDecimal a = Numbers.fromString(operand1, BigDecimal.class);
+        BigDecimal b = Numbers.fromString(operand2, BigDecimal.class);
 
-        LOG.info("Parsed operands {augend={}, addend={}}", parsedOperand1, parsedOperand2);
+        LOG.info("Parsed operands {a={}, b={}}", a, b);
 
-        return new Operands(parsedOperand1.get(), parsedOperand2.get());
+        return new Operands(a, b);
     }
 
-    private static Optional<Number> parseString(final String toParse) throws OperandMissingException {
 
-        Optional<Number> parsedNumber = Optional.empty();
-        try {
-            parsedNumber = Optional.of(NumberFormat.getInstance().parse(toParse));
-        } catch (ParseException e) {
-            LOG.warn(e.getMessage());
-            throw new OperandMissingException("Operation needs augent to be a number");
-        }
-
-        LOG.info("Parsed {string={}, number={}}", toParse, parsedNumber);
-        return parsedNumber;
-    }
 }

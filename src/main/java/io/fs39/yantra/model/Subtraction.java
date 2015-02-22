@@ -8,11 +8,11 @@ import org.slf4j.LoggerFactory;
  *
  * @author gdiegel
  */
-public final class Addition extends Operation implements Computable {
+public final class Subtraction extends Operation implements Computable {
 
-    private static final Logger LOG = LoggerFactory.getLogger(Addition.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Subtraction.class);
 
-    public Addition(Operands ops){
+    public Subtraction(Operands ops){
         
         super(ops);
     }
@@ -21,7 +21,7 @@ public final class Addition extends Operation implements Computable {
     public ComputationResult compute() {
 
         Operands operands = getOperands();
-        final Number result = ((BigDecimal) operands.getA()).add(((BigDecimal) operands.getB()));
+        final Number result = ((BigDecimal) operands.getB()).subtract(((BigDecimal) operands.getA()));
 
         LOG.info("Computation {result={}}", result);
         return new ComputationResult(result);
