@@ -20,7 +20,7 @@ public class SubtractionController {
 
     private static final Logger LOG = LoggerFactory.getLogger(SubtractionController.class);
 
-    @RequestMapping(value = "/subtract/{a}/from/{b}", method = RequestMethod.GET)
+    @RequestMapping(value = "/subtract/{a}/from/{b}/", method = RequestMethod.GET)
     public ComputationResult add(@PathVariable(value = "a") String a,
             @PathVariable(value = "b") String b) {
 
