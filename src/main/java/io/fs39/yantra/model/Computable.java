@@ -1,7 +1,6 @@
 package io.fs39.yantra.model;
 
 /**
- *
  * @author gdiegel
  */
 public interface Computable {

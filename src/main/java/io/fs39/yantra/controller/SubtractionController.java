@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- *
  * @author gdiegel
  */
 @RestController
@@ -21,9 +20,7 @@ public class SubtractionController {
     private static final Logger LOG = LoggerFactory.getLogger(SubtractionController.class);
 
     @RequestMapping(value = "/subtract/{a}/from/{b}/", method = RequestMethod.GET)
-    public ComputationResult add(@PathVariable(value = "a") String a,
-            @PathVariable(value = "b") String b) {
-
+    public ComputationResult add(@PathVariable(value = "a") String a, @PathVariable(value = "b") String b) {
         ComputationResult result;
         try {
             result = new Subtraction(Operands.asBigDecimal(a, b)).compute();

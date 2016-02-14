@@ -1,11 +1,11 @@
 package io.fs39.yantra.model;
 
 import java.math.BigDecimal;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- *
  * @author gdiegel
  */
 public final class Addition extends Operation implements Computable {
@@ -19,7 +19,6 @@ public final class Addition extends Operation implements Computable {
 
     @Override
     public ComputationResult compute() {
-
         Operands operands = getOperands();
         final Number result = ((BigDecimal) operands.getA()).add(((BigDecimal) operands.getB()));
 

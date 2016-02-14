@@ -1,3 +1,5 @@
 target/
 run.sh
 nbactions.xml
+.idea/
+*.iml

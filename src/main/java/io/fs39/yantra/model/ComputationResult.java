@@ -1,7 +1,6 @@
 package io.fs39.yantra.model;
 
 /**
- *
  * @author gdiegel
  */
 public final class ComputationResult {
@@ -17,27 +16,22 @@ public final class ComputationResult {
     }
 
     public Float asFloat() {
-
         return result.floatValue();
     }
 
     public Long asLong() {
-
         return result.longValue();
     }
 
     public Integer asInteger() {
-
         return result.intValue();
     }
 
     public Double asDouble() {
-
         return result.doubleValue();
     }
 
     public static ComputationResult invalid() {
-
         return new ComputationResult(Double.NaN);
     }
 

@@ -1,16 +1,17 @@
 package io.fs39.yantra.util;
 
 import io.fs39.yantra.exception.OperandMissingException;
+
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- *
  * @author gdiegel
  */
 public class Numbers {
@@ -18,7 +19,6 @@ public class Numbers {
     private static final Logger LOG = LoggerFactory.getLogger(Numbers.class);
 
     public static <T extends Number> T fromString(final String fromString, Class<T> type) throws OperandMissingException {
-
         Optional<T> toNumber = Optional.empty();
         if (type.equals(BigDecimal.class)) {
             DecimalFormat df = (DecimalFormat) DecimalFormat.getInstance();
@@ -46,10 +46,8 @@ public class Numbers {
     }
 
     private static void handleParseException(final String fromString, ParseException e) throws OperandMissingException {
-
-        String m = new StringBuilder("Couldn't parse string [").append(fromString).append("]: ")
-                .append(e.getMessage()).toString();
-        LOG.warn(m);
+        String m = "Couldn't parse string [" + fromString + "]";
+        LOG.warn(m, e);
         throw new OperandMissingException(m, e);
     }
 }

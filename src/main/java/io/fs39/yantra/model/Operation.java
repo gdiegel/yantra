@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- *
  * @author gdiegel
  */
 public abstract class Operation {
@@ -14,12 +13,10 @@ public abstract class Operation {
     private final Operands ops;
 
     public Operation(Operands ops) {
-
         this.ops = ops;
     }
 
     public Operands getOperands() {
-
         return ops;
     }
 
