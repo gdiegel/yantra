@@ -1,14 +1,13 @@
-package io.fs39.yantra.controller;
+package io.github.gdiegel.yantra.controller;
 
-import io.fs39.yantra.exception.ComputationException;
-import io.fs39.yantra.model.Addition;
-import io.fs39.yantra.model.ComputationResult;
-import io.fs39.yantra.model.Operands;
+import io.github.gdiegel.yantra.exception.ComputationException;
+import io.github.gdiegel.yantra.model.Addition;
+import io.github.gdiegel.yantra.model.ComputationResult;
+import io.github.gdiegel.yantra.model.Operands;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -19,7 +18,7 @@ public class AdditionController {
 
     private static final Logger LOG = LoggerFactory.getLogger(AdditionController.class);
 
-    @RequestMapping(value = "/add/{a}/to/{b}/", method = RequestMethod.GET)
+    @GetMapping("/add/{a}/to/{b}/")
     public ComputationResult add(@PathVariable(value = "a") String a, @PathVariable(value = "b") String b) {
         ComputationResult result;
         try {

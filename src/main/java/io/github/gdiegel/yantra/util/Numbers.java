@@ -1,15 +1,15 @@
-package io.fs39.yantra.util;
+package io.github.gdiegel.yantra.util;
 
-import io.fs39.yantra.exception.OperandMissingException;
+import io.github.gdiegel.yantra.exception.OperandMissingException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
+import java.text.MessageFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Optional;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author gdiegel
@@ -46,7 +46,7 @@ public class Numbers {
     }
 
     private static void handleParseException(final String fromString, ParseException e) throws OperandMissingException {
-        String m = "Couldn't parse string [" + fromString + "]";
+        final String m = MessageFormat.format("Couldn't parse string [{0}]", fromString);
         LOG.warn(m, e);
         throw new OperandMissingException(m, e);
     }

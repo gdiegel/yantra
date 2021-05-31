@@ -1,4 +1,4 @@
-package io.fs39.yantra.model;
+package io.github.gdiegel.yantra.model;
 
 /**
  * @author gdiegel

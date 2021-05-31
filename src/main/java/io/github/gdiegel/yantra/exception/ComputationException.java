@@ -1,13 +1,14 @@
-package io.fs39.yantra.exception;
+package io.github.gdiegel.yantra.exception;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author gdiegel
  */
 public class ComputationException extends Exception {
 
-    private static final Logger LOG = Logger.getLogger(ComputationException.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ComputationException.class);
 
     public ComputationException() {
         LOG.error("Computation Exception");
