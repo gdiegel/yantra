@@ -11,7 +11,7 @@ mvn clean spring-boot:run
 ```
 
 ```
-$ curl -i http://localhost:8080/add/2/to/3/
+curl -i http://localhost:8080/add/2/to/3/
 HTTP/1.1 200 OK
 Content-Type: application/json
 Content-Length: 12
