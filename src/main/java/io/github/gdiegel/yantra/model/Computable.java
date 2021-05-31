@@ -10,6 +10,6 @@ public interface Computable {
      *
      * @return the result of the compution
      */
-    ComputationResult compute();
+    Number compute();
 
 }

@@ -17,11 +17,11 @@ public final class Subtraction extends Operation implements Computable {
     }
 
     @Override
-    public ComputationResult compute() {
-        Operands operands = getOperands();
+    public Number compute() {
+        final Operands operands = getOperands();
         final Number result = ((BigDecimal) operands.getB()).subtract(((BigDecimal) operands.getA()));
         LOG.info("Computation {result={}}", result);
-        return new ComputationResult(result);
+        return result;
     }
 
 }

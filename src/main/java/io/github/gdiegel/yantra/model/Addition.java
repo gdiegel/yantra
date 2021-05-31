@@ -17,11 +17,11 @@ public final class Addition extends Operation implements Computable {
     }
 
     @Override
-    public ComputationResult compute() {
+    public Number compute() {
         final Operands operands = getOperands();
         final Number result = ((BigDecimal) operands.getA()).add(((BigDecimal) operands.getB()));
         LOG.info("Computation {result={}}", result);
-        return new ComputationResult(result);
+        return result;
     }
 
 }
