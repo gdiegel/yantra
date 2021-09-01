@@ -37,7 +37,7 @@ public class Numbers {
     }
 
     private static Number parseBigDecimal(String fromString) throws ParseException {
-        final DecimalFormat df = (DecimalFormat) DecimalFormat.getInstance();
+        final DecimalFormat df = new DecimalFormat();
         df.setParseBigDecimal(true);
         return df.parse(fromString);
     }
